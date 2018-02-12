@@ -1,5 +1,6 @@
 server {
-    listen       80;
+    listen 80;
+    listen [::]:80;
     server_name  localhost;
 
     resolver 8.8.8.8;
@@ -13,5 +14,10 @@ server {
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
         root   html;
+    }
+
+    # 屏蔽spider
+    if ($http_user_agent ~* (baiduspider|360spider|haosouspider|googlebot|soso|bing|sogou|yahoo|sohu-search|yodao|YoudaoBot|robozilla|msnbot|MJ12bot|NHN|Twiceler)) {
+        return  403;
     }
 }

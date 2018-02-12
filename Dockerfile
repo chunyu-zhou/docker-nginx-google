@@ -20,7 +20,6 @@ RUN apt-get install -y -qq git wget build-essential zlib1g-dev libpcre3-dev git 
 
 # download src
 
-
 RUN mkdir -p /usr/src \
     && cd /usr/src \
     && wget http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz \
@@ -91,7 +90,4 @@ EXPOSE 80
 EXPOSE 443
 
 CMD nginx && tail -F /var/log/nginx/access.log
-
-
-
 
