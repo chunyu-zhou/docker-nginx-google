@@ -1,6 +1,6 @@
 # nginx-google-proxy
 
-nginx 反向代理 google，github：[nginx-google-proxy](https://github.com/hectorqiu/nginx-google-proxy)
+nginx 反向代理 google
 
 ## 依赖环境
 + docker
@@ -9,12 +9,12 @@ nginx 反向代理 google，github：[nginx-google-proxy](https://github.com/hec
 
 ```
 # build
-cd path_to_nginx_google_proxy
+cd docker-nginx-google
 
-docker build -t="nginx-google-proxy" .
+docker build -t="nginx-google" .
 
 # run (后台运行)
-docker run -d -p 10080:80 nginx-google-proxy
+docker run -d -p 10080:80 nginx-google
 
 # test (默认监听 0.0.0.0)
 curl localhost:10080
